@@ -7,7 +7,7 @@ The Devops Final Project for QA consulting.
 1. [Brief](#Brief)
 2. [Architecture](#Architecture)
 3. [Risk Assessment](#Risk-Assessment)
-4. [Sprints and Results](#Activities-and-Results)
+4. [Sprints and Results](#Sprints-and-Results)
 5. [Testing](#Testing)
 6. [Costs](#Costs)
 7. [Workflow and Tools](#Workflow-and-Tools-Used)
@@ -18,6 +18,7 @@ The Devops Final Project for QA consulting.
 
 ## Brief
 
+Plan, design and implement a solution for automating the development workflows and deployments for the spring pet clinic application. It must have multi environment support and automatically build and deploy to test and live environments when changes are made and oushed to github. The costs for the project need to be calculated and all tools to be used must be chosen by us.
 
 ## Architecture
 
@@ -85,7 +86,7 @@ Here is my Risk Matrix with some of them added in:
 
 ![Risk Matrix](https://github.com/oskar951/SFIA2/blob/master/Images/RiskMatrix.jpg)
 
-## Activities and Results
+## Sprints and Results
 
 
 ## Testing
