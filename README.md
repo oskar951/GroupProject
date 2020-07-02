@@ -8,7 +8,7 @@ The Devops Final Project for QA consulting.
 2. [Architecture](#Architecture)
 3. [Risk Assessment](#Risk-Assessment)
 4. [Sprints and Results](#Sprints-and-Results)
-5. [Testing](#Testing)
+5. [Bugs and Fixes](#Bugs-and-Fixes)
 6. [Costs](#Costs)
 7. [Workflow and Tools](#Workflow-and-Tools-Used)
 8. [Future Improvements](#Improvements-to-Make-in-the-Future)
@@ -35,14 +35,14 @@ Plan, design and implement a solution for automating the development workflows a
 
 ### Trello Project Tracking
 
-Using Trello, I tracked my project along the way with a Kanban style board which allowed me to see my progress and things that need to be done. Here is the inital board:
+Using Trello, we tracked the project along the way with a Kanban style board which allowed us to see the progress and things that need to be done. Here is the inital board which shows the tasks that need to be done, some that are already in progress and others that had already been done such as setting up github. Our first sprint has also been outlined:
 
 ![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/Trello1.jpg)
 
-This is my board throughout the project when some things were in progress and others completed. I also added bugs that I encountered.
+This is the board throughout the project when some things were in progress and others completed. 
 ![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/Trello2.jpg)
 
-In the final board everything is complete apart from the documentation to which I was adding finishing touches. The bugs have been solved and solutions were added to the description of the cards.
+In the final board everything is complete apart from the documentation to which we are adding finishing touches. 
 ![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/Trello3.jpg)
 
 ## MoSCoW
@@ -89,7 +89,7 @@ Here is my Risk Matrix with some of them added in:
 ## Sprints and Results
 
 
-## Testing
+## Bugs and Fixes
 
 
 
