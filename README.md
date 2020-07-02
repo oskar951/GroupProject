@@ -7,9 +7,9 @@ The Devops Final Project for QA consulting.
 1. [Brief](#Brief)
 2. [Architecture](#Architecture)
 3. [Risk Assessment](#Risk-Assessment)
-4. [Activities and Results](#Activities-and-Results)
+4. [Sprints and Results](#Activities-and-Results)
 5. [Testing](#Testing)
-6. [Front End Design/Result](#Front-End-Design/Result)
+6. [Costs](#Costs)
 7. [Workflow and Tools](#Workflow-and-Tools-Used)
 8. [Future Improvements](#Improvements-to-Make-in-the-Future)
 9. [Acknowledgements](#Acknowledgements)
@@ -93,17 +93,12 @@ Here is my Risk Matrix with some of them added in:
 
 
 
-## Front End Design/Result
+## Costs
 
 
 
 ![wireframe](https://github.com/oskar951/SFIA2/blob/master/Images/Wireframe.jpg)
 
-### Front End Result
-
-
-
-![Frontend](https://github.com/oskar951/SFIA2/blob/master/Images/Frontend.jpg)
 
 [Back to top](#Index)
 
