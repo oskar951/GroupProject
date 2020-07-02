@@ -28,3 +28,10 @@ module "webserver_node" {
   }
   associate_public_ip_address = true
 }
+
+module "rds_instance" {
+  source    = "./RDS"
+  vpc_sg_id = module.aws_webserver_sg.aws_wsg_id
+  subnetA   = module.aws_vpc.public_subnetA_id
+  subnetB   = module.aws_vpc.public_subnetB_id
+}

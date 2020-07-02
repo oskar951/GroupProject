@@ -12,6 +12,12 @@ resource "aws_subnet" "publicA" {
   vpc_id            = aws_vpc.vpc.id
 }
 
+resource "aws_subnet" "publicB" {
+  cidr_block        = var.pub-snB-cidr-block
+  availability_zone = data.aws_availability_zones.available.names[1]
+  vpc_id            = aws_vpc.vpc.id
+}
+
 resource "aws_internet_gateway" "vpc_igw" {
   vpc_id = aws_vpc.vpc.id
 

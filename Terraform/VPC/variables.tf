@@ -7,3 +7,8 @@ variable "pub-snA-cidr-block" {
   description = "CIDR block for Public Subnet A"
   default     = "10.0.2.0/24"
 }
+
+variable "pub-snB-cidr-block" {
+  description = "CIDR block for Public Subnet B"
+  default     = "10.0.72.0/24"
+}
