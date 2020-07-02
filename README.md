@@ -98,7 +98,6 @@ Here is my Risk Matrix with some of them added in:
 
 
 
-![wireframe](https://github.com/oskar951/SFIA2/blob/master/Images/Wireframe.jpg)
 
 
 [Back to top](#Index)
@@ -107,18 +106,15 @@ Here is my Risk Matrix with some of them added in:
 
 
 
-![WorkFlow](https://github.com/oskar951/SFIA2/blob/master/Images/Workflow.jpg)
+![WorkFlow](https://github.com/oskar951/SFIA2/blob/master/Images/)
 
 * SQL - Database service
-* Python - Logic
-* Flask - Front End (HTML)
 * Jenkins - Continues Integration and Deployment server
-* PyTest - Testing
 * Git - Versions Control System
 * Trello - Project Tracking
-* GCP - Cloud Server
+* Terraform - Controlling infrastructure for AWS
+* Kubernetes - Application container deployment
 * Docker - Containerisation tool
-* Docker Swarm - Container orchestration tool
 * Ansible - Configuration and deployment tool
 * NGINX - Reverse proxy web server
 
