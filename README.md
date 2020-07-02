@@ -37,13 +37,13 @@ Plan, design and implement a solution for automating the development workflows a
 
 Using Trello, I tracked my project along the way with a Kanban style board which allowed me to see my progress and things that need to be done. Here is the inital board:
 
-![Trello Board](https://github.com/oskar951/SFIA2/blob/master/Images/Trello1.jpg)
+![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/Trello1.jpg)
 
 This is my board throughout the project when some things were in progress and others completed. I also added bugs that I encountered.
-![Trello Board](https://github.com/oskar951/SFIA2/blob/master/Images/Trello2.jpg)
+![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/Trello2.jpg)
 
 In the final board everything is complete apart from the documentation to which I was adding finishing touches. The bugs have been solved and solutions were added to the description of the cards.
-![Trello Board](https://github.com/oskar951/SFIA2/blob/master/Images/Trello3.jpg)
+![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/Trello3.jpg)
 
 ## MoSCoW
 
