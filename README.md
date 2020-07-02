@@ -126,10 +126,10 @@ Here is my Risk Matrix with some of them added in:
 
 Thanks to the Trainers for the knowledge used to build and document this project.
 
-Also thanks to my cohort for all learning together and being a great group.
+Also thanks to the group for working well together and completing tasks.
 
 
-**Written and Produced by** - *Oskaras Ceremnovas* 
+**Written and Produced by** - *Group 1: Hamza Yacub, Monsif Seaton, Harpreet Jhita, Oskar Ceremnovas* 
 
 #### MIT License
 
