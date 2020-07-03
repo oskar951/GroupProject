@@ -34,4 +34,6 @@ module "rds_instance" {
   vpc_sg_id = module.aws_webserver_sg.aws_wsg_id
   subnetA   = module.aws_vpc.public_subnetA_id
   subnetB   = module.aws_vpc.public_subnetB_id
+  username  = "${var.usr}"
+  password  = "${var.pswd}"
 }

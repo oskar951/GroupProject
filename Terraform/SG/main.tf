@@ -1,6 +1,6 @@
 resource "aws_security_group" "wsg" {
   name        = var.name
-  description = "Allow SSH connection"
+  description = "Allow ingress ports to connect"
   vpc_id      = var.vpc_id
 
   dynamic "ingress" {

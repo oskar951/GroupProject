@@ -20,4 +20,5 @@ resource "aws_db_instance" "rds_instance" {
   vpc_security_group_ids = [var.vpc_sg_id]
   db_subnet_group_name   = aws_db_subnet_group.subnet_db.id
   skip_final_snapshot    = var.skip_final_ss
+  identifier             = var.db_identifier
 }

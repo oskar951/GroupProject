@@ -25,7 +25,7 @@ variable "instance_class" {
 
 variable "instance_name" {
   description = "name of the database"
-  default     = "mysql_db"
+  default     = "mysql_rds"
 }
 
 variable "username" {
@@ -46,6 +46,11 @@ variable "parameter_group" {
 variable "skip_final_ss" {
   description = "Do you want to skip the final snapshot of the rds instance"
   default     = true
+}
+
+variable "db_identifier" {
+  description = "Name of RDS instance"
+  default     = "petclinic-rds"
 }
 
 variable "vpc_sg_id" {
