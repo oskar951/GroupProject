@@ -14,7 +14,11 @@ services:
     build: ./spring-petclinic-rest
     ports:
     - target: 9966
-      published: 9966    
+      published: 9966
+    environment:
+      - url=${URL}
+      - username=${USERNAME}
+      - password=${PASSWORD}
   frontend:
     # image: hsjhita1/frontend:latest
     build: ./spring-petclinic-angular
