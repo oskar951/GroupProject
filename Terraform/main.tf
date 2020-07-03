@@ -37,3 +37,9 @@ module "rds_instance" {
   username  = "${var.usr}"
   password  = "${var.pswd}"
 }
+
+module "eks" {
+  source       = "./EKS"
+  subnets = [module.aws_vpc.public_subnetA_id, module.aws_vpc.public_subnetB_id ]
+  
+}
