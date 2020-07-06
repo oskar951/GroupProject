@@ -18,7 +18,7 @@ The Devops Final Project for QA consulting.
 
 ## Brief
 
-Plan, design and implement a solution for automating the development workflows and deployments for the spring pet clinic application. It must have multi environment support and automatically build and deploy to test and live environments when changes are made and oushed to github. The costs for the project need to be calculated and all tools to be used must be chosen by us.
+Plan, design and implement a solution for automating the development workflows and deployments for the spring pet clinic application. It must have multi environment support and automatically build and deploy to test and live environments when changes are made and pushed to github. The costs for the project need to be calculated and all tools to be used must be chosen by us.
 
 ## Architecture
 
