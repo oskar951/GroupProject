@@ -17,7 +17,7 @@ def lambda_handler(event, context):
         Filters = [
             {
                 'Name' : 'tag:Name',
-                'Values' : ['test-VM']
+                'Values' : ['WebServer_Node']
             }
         ]
     )

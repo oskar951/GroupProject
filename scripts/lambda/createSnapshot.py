@@ -8,12 +8,12 @@ def lambda_handler(event, context):
     ec2_client = boto3.client('ec2')
     ec2_resource = boto3.resource('ec2')
 
-    # Find the instance called test-VM
+    # Find the instance called WebServer_Node
     instances = ec2_resource.instances.filter(
         Filters = [
             {
                 'Name' : 'tag:Name',
-                'Values' : ['test-VM']
+                'Values' : ['WebServer_Node']
             }
         ]
     )

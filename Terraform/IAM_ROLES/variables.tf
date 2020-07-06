@@ -12,3 +12,8 @@ variable "iam_policy_name" {
   description = "Name for IAM policy"
   default     = "main_policy"
 }
+
+variable "iam_lambda_role_name" {
+  description = "Name for IAM role"
+  default     = "Lambda-Role"
+}
