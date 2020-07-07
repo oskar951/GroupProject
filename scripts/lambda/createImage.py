@@ -38,4 +38,4 @@ def lambda_handler(event, context):
         Description='AMI based on snapshot' + snapID[0],
         DryRun=False,
         InstanceId=instID[0],
-        Name='test-VM AMI',)
+        Name='WebServer_Node AMI',) # create date stamp
