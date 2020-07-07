@@ -117,12 +117,13 @@ Front end not working in kubernetes bug - The front end wasn't accessable throug
 
 ## Costs
 
-Budget = £20
+Our budget for this project was £20. We ended up spending $1.94/£1.55, coming in well under budget
 
+Our estimated running costs for a month of uptime are ~$113
 
+It is impossible to calculate the costs for a serverless equivalent without assuming a number of visits per month, but the less views per month the website achieves, the cheaper it will be to access. This also comes at the cost of performance so isn't worth it for a website in many cases
 
-[Back to top](#Index)
-
+To reduce monthly costs, we could opt to not use EKS to manage the kubernetes cluster and do it ourselves, but this would of course result in more work being spent by people which is often a bad trade off
 
 ## Improvements to Make in the Future
 
