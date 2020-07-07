@@ -53,11 +53,8 @@ Using Trello, we tracked the project along the way with a Kanban style board whi
 
 ![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/Trello1.jpg)
 
-This is the board throughout the project when some things were in progress and others completed. 
-![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/Trello2.jpg)
-
-In the final board everything is complete apart from the documentation to which we are adding finishing touches. 
-![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/Trello3.jpg)
+This is the board throughout the project when some things were in progress and others completed. New tasks had been added now that we fully understood what was required of us and what we wanted to do 
+![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/trello2.jpg)
 
 ## MoSCoW
 
@@ -87,7 +84,7 @@ In our risk assessment we have listed possible risks with the project. We added 
 
 ![Risk Assessment](https://github.com/oskar951/GroupProject/blob/master/Images/risk%20assesment%201.png)
 
-I then reviewed my risks towards the end of the project to see which control measures are implemented and whether I avoided those risks or not.
+We then reviewed my risks towards the end of the project to see which control measures are implemented and whether we avoided those risks or not.
 
 ![Risk Assessment2](https://github.com/oskar951/GroupProject/blob/master/Images/risk%20assesment%202.png)
 
