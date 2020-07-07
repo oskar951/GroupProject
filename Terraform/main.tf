@@ -1,5 +1,5 @@
 provider "aws" {
-  region                  = "eu-west-2"
+  region                  = "eu-west-1"
   shared_credentials_file = "/home/ubuntu/.aws/credentials"
 }
 
@@ -47,4 +47,17 @@ module "eks" {
 module "lambda" {
   source = "./LAMBDA"
   role   = module.aws_iam.lambda_role
+}
+
+module "sns" {
+  source          = "./SNS"
+  lambda_recovery = module.lambda.lambdaInstanceArn
+}
+
+module "cloudwatch" {
+  source                = "./CLOUDWATCH"
+  instanceID            = module.webserver_node.ec2_id
+  instance_recovery_arn = module.sns.recovery_arn
+  lambda_image_arn      = module.lambda.lambdaImageArn
+  lambda_snapshot_arn   = module.lambda.lambdaSnapshotArn
 }
