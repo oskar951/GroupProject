@@ -46,5 +46,5 @@ module "eks" {
 
 module "lambda" {
   source = "./LAMBDA"
-  role = module.aws_iam.lambda_role
+  role   = module.aws_iam.lambda_role
 }
