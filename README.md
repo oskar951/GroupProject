@@ -1,6 +1,6 @@
 # GroupProject
 
-The Devops Final Project for QA consulting.
+Week 12 Devops Final Project
 
 ## Index
 
@@ -10,26 +10,40 @@ The Devops Final Project for QA consulting.
 4. [Sprints and Results](#Sprints-and-Results)
 5. [Bugs and Fixes](#Bugs-and-Fixes)
 6. [Costs](#Costs)
-7. [Workflow and Tools](#Workflow-and-Tools-Used)
-8. [Future Improvements](#Improvements-to-Make-in-the-Future)
-9. [Acknowledgements](#Acknowledgements)
+7. [Future Improvements](#Improvements-to-Make-in-the-Future)
+8. [Acknowledgements](#Acknowledgements)
 
 
 
 ## Brief
 
-Plan, design and implement a solution for automating the development workflows and deployments for the spring pet clinic application. It must have multi environment support and automatically build and deploy to test and live environments when changes are made and pushed to github. The costs for the project need to be calculated and all tools to be used must be chosen by us.
+Plan, design and implement a solution for automating the development workflows and deployments for the spring pet clinic application. It must have multi environment support and automatically build and deploy to test and live environments when changes are made and pushed to github. The costs for the project need to be calculated and all tools to be used must be chosen by us, although we have to use AWS as our hosting platform.
+
+Our group was also given the additional tasks of setting up disaster recovery and monitoring
 
 ## Architecture
 
+We ended up choosing the following tools:
 
+* MySQL through AWS RDS - Database service
+* Jenkins - Continuous Integration and Deployment server
+* Git - Versions Control System
+* Trello - Project Tracking
+* Terraform - Controlling infrastructure for AWS
+* Kubernetes - Application container deployment
+* Docker - Containerisation tool
+* Docker Compose - Containerisation orchestration tool
+* NGINX - Reverse proxy web server
 
+Our source code is pushed via Git to GitHub. When this is merged into the master branch, a webhook is triggered which activates the Jenkins server. Jenkins then sets up the environment if not already done via Terraform and builds the new docker images before uploading them to dockerhub. The Terraform build triggers Amazon EKS that controls the Kubernetes cluster. The new docker images are pulled down to the Kubernetes pods to update the application
+
+On the AWS side, we have a VPC with a single security group that contains everything. RDS hosts the MySQL database persistently to allow the EKS managed Kubernetes cluster running on EC2 instances to access the data. The kubernetes master node is running of a T3a system because two cores are required, and the worker nodes are all running on T2 micros to save on costs. The website isn't accessible normally from the public internet, but the internet gateway accepts HTTP traffic which is passed to the app through an NGINX reverse proxy
+
+We have monitoring features to increase uptime. Regular snapshots of the cluster are taken and stored in an S3 bucket. Cloudwatch monitors the health of each EC2 instance and if there is cause for concern, triggers a lambda function that spins up a replacement EC2 before taking down the unhealthy one. Cloudtrail is used on the IAM roles to track any malicious activity, and the IAM roles are given the minimum permissions required to do their job
 
 [Back to top](#Index)
 
 ### CI Pipeline
-
-
 
 ![Trello Board](https://github.com/oskar951/SFIA2/blob/master/Images/Pipeline.jpg)
 
@@ -48,33 +62,28 @@ In the final board everything is complete apart from the documentation to which 
 ## MoSCoW
 
 ### Must Have
-* Kanban style board for project tracking
-* Version control system using the feature branch model to implement developing code
-* CI server to automatically build and deploy software to a cloud hosted machine
-* Docker for containerisation
-* Docker swarm for container orchestration 
-* Ansible for configuring and deploying the application
-* 4 micro services which work together, are load balanced and replicated throughout nodes in order to stay up whilst being updated
+* Fully functional dockerised application
+* Persistent database
+* Automatic deployment
+* Automatic allocation
 
 ### Should Have
-* Clear and detailed documentation showing progress throughout the project and testing
-* The applciation provides an outcome dependant on rules
-* Designs for the project before it is started
-* Webhooks so that jenkins can build instantly when github has been updated
+* Have disaster recovery
+* Have monitoring of both IAM users and infrastructure
+
 
 ### Could Have
-* More complicated service which asks for user input as well as providing the user with a generated output
-* Full CRUD funcionality
-* Security through proper firewall use and changing of passwords
+* Use of NGINX reverse proxy to make the site easier to access
+* Increased security for IAM users through two factor authentication
 
-### Wont Have
-* Extra functionality allowing people to up or down vote the usernames that they get so that more popular name combinations can be provided
-* Fully integrated autoamtic testing with 100% coverage
 
+### Want to Have
+* High availability
+* Multiple regions to reduce latency and provide an extra layer of redundancy
 
 ## Risk Assessment
 
-In my risk assessment I have listed possible risks with the project. I added the risks cause and effect as well as the likelihood of it happening, this is then followed by a control measure which can help negate the risk and give it a lower likelihood and consequence. 
+In our risk assessment we have listed possible risks with the project. We added the risks cause and effect as well as the likelihood of it happening, and what we can do to help negate the risk and give it a lower likelihood and consequence. 
 
 ![Risk Assessment](https://github.com/oskar951/SFIA2/blob/master/Images/RiskAssessment1.jpg)
 
@@ -82,18 +91,29 @@ I then reviewed my risks towards the end of the project to see which control mea
 
 ![Risk Assessment2](https://github.com/oskar951/SFIA2/blob/master/Images/RiskAssessment2.jpg)
 
-Here is my Risk Matrix with some of them added in:
-
-![Risk Matrix](https://github.com/oskar951/SFIA2/blob/master/Images/RiskMatrix.jpg)
-
 ## Sprints and Results
 Sprint 1
-Our goals for this sprint were to get the 
+Our goals for this sprint were to get the app working together and dockerised, and the AWS environment set up
 
+We finished this quite early, but we didn't end the sprint to tasks for later sprints bled in, namely documentation, NGINX, extra features and other MVP tasks that should have been for the next sprint. This meant that when we moved onto the next sprints we had a head start, but also that our work wasn't fully focused on the immediate tasks in this sprint
+
+Sprint 2
+Our goals for this sprint were to complete the MVP including all documentation to pass the project and allow us to use the rest of the time to add additional features
+
+Due to being rate limited by bugs stopping the build from working, some tasks were out of reach. In that time we did documentation and additional tasks originally meant for sprint 3
+
+Sprint 3
+Our goals for this sprint were to fully implement the additional tasks, to test everything is working and to practice our presentation
+
+Due to the additional tasks and presentation being largely 1finished during sprint 2, this was fairly easy. We just had to work out who was saying what and who was demonstrating each part of the project
+
+We finished this after wrestling with a bunch of bugs with EKS. the s
 ## Bugs and Fixes
 NGINX bad gateway bug - The error was due to the NGINX file not specifying the IP to activate the proxy from when triggered. This was discovered and solved by learning how NGINX works as a program
 
+AWS EKS Access Denied bug - The cluster didn't permit access from a root user for some reason. swapping from eu-west-2 to eu-west-1 fixed this, although we're still not sure why
 
+Front end not working in kubernetes bug - The front end wasn't accessable through kubernetes. rebuilding the application fixed this. we think there is old code being retained because running it on a new environment worked with no issues
 
 ## Costs
 
@@ -103,32 +123,16 @@ Budget = £20
 
 [Back to top](#Index)
 
-## Workflow and Tools Used
-
-
-
-![WorkFlow](https://github.com/oskar951/SFIA2/blob/master/Images/)
-
-* SQL - Database service
-* Jenkins - Continues Integration and Deployment server
-* Git - Versions Control System
-* Trello - Project Tracking
-* Terraform - Controlling infrastructure for AWS
-* Kubernetes - Application container deployment
-* Docker - Containerisation tool
-* Ansible - Configuration and deployment tool
-* NGINX - Reverse proxy web server
 
 ## Improvements to Make in the Future
 
-
+In the future we would make the switch to a serverless architecture to reduce costs, and we would have the application in multiple regions to reduce latency on the customer end
 
 ## Acknowledgements
 
 Thanks to the Trainers for the knowledge used to build and document this project.
 
 Also thanks to the group for working well together and completing tasks.
-
 
 **Written and Produced by** - *Group 1: Hamza Yacub, Monsif Seaton, Harpreet Jhita, Oskar Ceremnovas* 
 
