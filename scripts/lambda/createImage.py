@@ -1,6 +1,9 @@
 import boto3
 
 def lambda_handler(event, context):
+    currentDate = datetime.date.today()
+    stringDate = currentDate.strftime("%d/%m/%y")
+
     ec2_client = boto3.client('ec2')
     ec2_resources = boto3.resource('ec2')
 
@@ -25,6 +28,8 @@ def lambda_handler(event, context):
         instID.append(instance.id)
 
     # Create image based of snapshot
+    imageName = 'WebServer_Node AMI ' + stringDate
+
     response = ec2_client.create_image(
         BlockDeviceMappings=[
             {
@@ -38,4 +43,4 @@ def lambda_handler(event, context):
         Description='AMI based on snapshot' + snapID[0],
         DryRun=False,
         InstanceId=instID[0],
-        Name='WebServer_Node AMI',) # create date stamp
+        Name=imageName,) # add date stamp to image
