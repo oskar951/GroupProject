@@ -104,7 +104,6 @@ Our goals for this sprint were to fully implement the additional tasks, to test 
 
 Due to the additional tasks and presentation being largely 1finished during sprint 2, this was fairly easy. We just had to work out who was saying what and who was demonstrating each part of the project
 
-We finished this after wrestling with a bunch of bugs with EKS. the s
 ## Bugs and Fixes
 NGINX bad gateway bug - The error was due to the NGINX file not specifying the IP to activate the proxy from when triggered. This was discovered and solved by learning how NGINX works as a program
 
