@@ -37,15 +37,14 @@ We ended up choosing the following tools:
 
 Our source code is pushed via Git to GitHub. When this is merged into the master branch, a webhook is triggered which activates the Jenkins server. Jenkins then sets up the environment if not already done via Terraform and builds the new docker images before uploading them to dockerhub. The Terraform build triggers Amazon EKS that controls the Kubernetes cluster. The new docker images are pulled down to the Kubernetes pods to update the application
 
+![CI pipeline](https://github.com/oskar951/SFIA2/blob/master/Images/Pipeline.jpg)
+
 On the AWS side, we have a VPC with a single security group that contains everything. RDS hosts the MySQL database persistently to allow the EKS managed Kubernetes cluster running on EC2 instances to access the data. The kubernetes master node is running of a T3a system because two cores are required, and the worker nodes are all running on T2 micros to save on costs. The website isn't accessible normally from the public internet, but the internet gateway accepts HTTP traffic which is passed to the app through an NGINX reverse proxy
+
+![AWS architecture](https://github.com/oskar951/GroupProject/blob/master/Images/aws.png)
 
 We have monitoring features to increase uptime. Regular snapshots of the cluster are taken and stored in an S3 bucket. Cloudwatch monitors the health of each EC2 instance and if there is cause for concern, triggers a lambda function that spins up a replacement EC2 before taking down the unhealthy one. Cloudtrail is used on the IAM roles to track any malicious activity, and the IAM roles are given the minimum permissions required to do their job
 
-[Back to top](#Index)
-
-### CI Pipeline
-
-![Trello Board](https://github.com/oskar951/SFIA2/blob/master/Images/Pipeline.jpg)
 
 ### Trello Project Tracking
 
