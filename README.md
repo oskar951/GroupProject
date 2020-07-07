@@ -85,11 +85,11 @@ In the final board everything is complete apart from the documentation to which 
 
 In our risk assessment we have listed possible risks with the project. We added the risks cause and effect as well as the likelihood of it happening, and what we can do to help negate the risk and give it a lower likelihood and consequence. 
 
-![Risk Assessment](https://github.com/oskar951/SFIA2/blob/master/Images/RiskAssessment1.jpg)
+![Risk Assessment](https://github.com/oskar951/GroupProject/tree/master/Images/risk assessment 1.jpg)
 
 I then reviewed my risks towards the end of the project to see which control measures are implemented and whether I avoided those risks or not.
 
-![Risk Assessment2](https://github.com/oskar951/SFIA2/blob/master/Images/RiskAssessment2.jpg)
+![Risk Assessment2](https://github.com/oskar951/GroupProject/tree/master/Images/risk assessment 2.jpg)
 
 ## Sprints and Results
 Sprint 1
