@@ -7,4 +7,5 @@
 
 #docker push hsjhita1/frontend:latest
 . ~/.bashrc
+printenv
 sudo docker-compose up -d #remove and replace with kubernetes commands
