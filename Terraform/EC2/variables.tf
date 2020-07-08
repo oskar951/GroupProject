@@ -5,7 +5,7 @@ variable "ubuntu-ami" {
 
 variable "instance-type" {
   description = "instance type"
-  default     = "t2.micro"
+  default     = "t3a.medium"
 
 }
 
