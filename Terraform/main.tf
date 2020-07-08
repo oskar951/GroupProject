@@ -13,7 +13,6 @@ module "aws_vpc" {
 
 module "aws_webserver_sg" {
   source = "./SG"
-  name   = "WebServerSG"
   vpc_id = module.aws_vpc.vpc_id
 }
 
@@ -22,11 +21,6 @@ module "webserver_node" {
   subnet_id              = module.aws_vpc.public_subnetA_id
   vpc_security_group_ids = module.aws_webserver_sg.aws_wsg_id
   iam_instance_profile   = module.aws_iam.iam_instance_profile
-
-  tags = {
-    Name = "WebServer_Node"
-  }
-  associate_public_ip_address = true
 }
 
 module "rds_instance" {

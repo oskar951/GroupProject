@@ -22,12 +22,12 @@ variable "vpc_security_group_ids" {
   default = ""
 }
 
-variable "tags" {
-  default = ""
+variable "name_tag" {
+  default = "WebServer_Node"
 }
 
 variable "associate_public_ip_address" {
-  default = ""
+  default = true
 }
 
 variable "iam_instance_profile" {

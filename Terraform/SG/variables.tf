@@ -6,7 +6,7 @@ variable "ingress_ports" {
 
 variable "name" {
   description = "Security Group name"
-  default     = "SG1"
+  default     = "WebServerSG"
 
 }
 

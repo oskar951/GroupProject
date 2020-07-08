@@ -6,13 +6,15 @@ resource "aws_instance" "Webserver" {
   vpc_security_group_ids = [var.vpc_security_group_ids]
   iam_instance_profile   = var.iam_instance_profile
   user_data = "${file("../scripts/installjenkins.sh")}"
+  associate_public_ip_address = var.associate_public_ip_address
 
   lifecycle {
     create_before_destroy = true
   }
 
-  tags = var.tags
-
-  associate_public_ip_address = var.associate_public_ip_address
-
+  tags = {
+    Name = var.name_tag
+  }
 }
+
+###################### WORKER NODES ######################
