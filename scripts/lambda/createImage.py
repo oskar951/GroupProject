@@ -43,4 +43,4 @@ def lambda_handler(event, context):
         Description='AMI based on snapshot' + snapID[0],
         DryRun=False,
         InstanceId=instID[0],
-        Name=imageName,) # add date stamp to image
+        Name=imageName) # add date stamp to image

@@ -18,13 +18,13 @@ def lambda_handler(event, context):
 
     instance = ec2_resource.create_instances(
         ImageId = allImages[0],
-        InstanceType = 't2.micro',
+        InstanceType = 't3a.medium',
         KeyName = 'aws',
         MaxCount = 1,
         MinCount = 1,
         TagSpecification = [
             {
-                'ResourceType' : 'snapshot',
+                'ResourceType' : 'ec2_instance',
                 'Tags' : [
                 {
                     'Key' : 'Name',
