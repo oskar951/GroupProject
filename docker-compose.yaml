@@ -18,9 +18,9 @@ services:
     - target: 9966
       published: 9966
     environment:
-      - url=${dburl}
-      - username=${dbuser}
-      - password=${dbpass}
+    - url=${dburl}
+    - username=${dbuser}
+    - password=${dbpass}
   frontend:
     image: hsjhita1/frontend:latest
     build: ./spring-petclinic-angular
