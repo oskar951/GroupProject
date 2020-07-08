@@ -1,4 +1,4 @@
-resource "aws_instance" "Instances" {
+resource "aws_instance" "Webserver" {
   ami                    = var.ubuntu-ami
   instance_type          = var.instance-type
   key_name               = var.pem-key

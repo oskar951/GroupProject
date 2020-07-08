@@ -1,5 +1,7 @@
 resource "aws_vpc" "vpc" {
-  cidr_block = var.vpc-cidr-block
+  cidr_block           = var.vpc-cidr-block
+  enable_dns_support   = true
+  enable_dns_hostnames = true
 }
 
 data "aws_availability_zones" "available" {
@@ -7,15 +9,28 @@ data "aws_availability_zones" "available" {
 }
 
 resource "aws_subnet" "publicA" {
-  cidr_block        = var.pub-snA-cidr-block
-  availability_zone = data.aws_availability_zones.available.names[0]
-  vpc_id            = aws_vpc.vpc.id
+  cidr_block              = var.pub-snA-cidr-block
+  availability_zone       = data.aws_availability_zones.available.names[0]
+  vpc_id                  = aws_vpc.vpc.id
+  map_public_ip_on_launch = true
+
+
+  tags = {
+    Key   = "kubernetes.io/cluster/EKS1"
+    Value = "shared"
+  }
 }
 
 resource "aws_subnet" "publicB" {
-  cidr_block        = var.pub-snB-cidr-block
-  availability_zone = data.aws_availability_zones.available.names[1]
-  vpc_id            = aws_vpc.vpc.id
+  cidr_block              = var.pub-snB-cidr-block
+  availability_zone       = data.aws_availability_zones.available.names[1]
+  vpc_id                  = aws_vpc.vpc.id
+  map_public_ip_on_launch = true
+
+  tags = {
+    Key   = "kubernetes.io/cluster/EKS1"
+    Value = "shared"
+  }
 }
 
 resource "aws_internet_gateway" "vpc_igw" {
@@ -42,5 +57,10 @@ resource "aws_route_table" "vpc_rt" {
 
 resource "aws_route_table_association" "pub_subA_rta" {
   subnet_id      = aws_subnet.publicA.id
+  route_table_id = aws_route_table.vpc_rt.id
+}
+
+resource "aws_route_table_association" "pub_subB_rta" {
+  subnet_id      = aws_subnet.publicB.id
   route_table_id = aws_route_table.vpc_rt.id
 }

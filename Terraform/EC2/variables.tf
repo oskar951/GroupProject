@@ -1,6 +1,6 @@
 variable "ubuntu-ami" {
   description = "ubuntu ami"
-  default     = "ami-00f6a0c18edb19300"
+  default     = "ami-089cc16f7f08c4457"
 }
 
 variable "instance-type" {
