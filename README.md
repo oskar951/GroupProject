@@ -37,7 +37,8 @@ We ended up choosing the following tools:
 
 Our source code is pushed via Git to GitHub. When this is merged into the master branch, a webhook is triggered which activates the Jenkins server. Jenkins then sets up the environment if not already done via Terraform and builds the new docker images before uploading them to dockerhub. The Terraform build triggers Amazon EKS that controls the Kubernetes cluster. The new docker images are pulled down to the Kubernetes pods to update the application
 
-![CI pipeline](https://github.com/oskar951/SFIA2/blob/master/Images/Pipeline.jpg)
+![CI pipeline](https://github.com/oskar951/GroupProject/blob/master/Images/ColouredPipeline.png)
+![CI pipeline](https://github.com/oskar951/GroupProject/blob/master/Images/BlackPipeline.png)
 
 On the AWS side, we have a VPC with a single security group that contains everything. RDS hosts the MySQL database persistently to allow the EKS managed Kubernetes cluster running on EC2 instances to access the data. The kubernetes master node is running of a T3a system because two cores are required, and the worker nodes are all running on T2 micros to save on costs. The website isn't accessible normally from the public internet, but the internet gateway accepts HTTP traffic which is passed to the app through an NGINX reverse proxy
 
