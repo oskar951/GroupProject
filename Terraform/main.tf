@@ -38,11 +38,10 @@ module "rds_instance" {
   password  = "${var.pswd}"
 }
 
-module "eks" {
-  source  = "./EKS"
-  subnets = [module.aws_vpc.public_subnetA_id, module.aws_vpc.public_subnetB_id]
-
-}
+# module "eks" {
+#   source  = "./EKS"
+#   subnets = [module.aws_vpc.public_subnetA_id, module.aws_vpc.public_subnetB_id]
+# }
 
 module "lambda" {
   source = "./LAMBDA"
