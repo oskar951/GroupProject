@@ -1,20 +1,26 @@
 version: '3.7'
-services: 
+services:
   nginx:
     image: nginx:latest
-    ports: 
-    - target: 80
-      published: 80
-    volumes: 
+    ports:
+    - 80:80
+    volumes:
     - type: bind
       source: ./nginx/nginx.conf
       target: /etc/nginx/nginx.conf
+    depends_on:
+    - backend
+    - frontend
   backend:
     # image: hsjhita1/backend:latest
     build: ./spring-petclinic-rest
     ports:
     - target: 9966
-      published: 9966    
+      published: 9966
+    environment:
+      - url=${URL}
+      - username=${USERNAME}
+      - password=${PASSWORD}
   frontend:
     # image: hsjhita1/frontend:latest
     build: ./spring-petclinic-angular
