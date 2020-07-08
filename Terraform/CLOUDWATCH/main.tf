@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_dashboard" "main" {
-  dashboard_name = "my-dashboard"
+  dashboard_name = "Pet_clinic_Dashboard"
 
   dashboard_body = <<EOF
  {
