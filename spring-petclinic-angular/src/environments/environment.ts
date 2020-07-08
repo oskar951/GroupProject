@@ -23,5 +23,5 @@
 
 export const environment = {
   production: false,
-  REST_API_URL: 'http://http://3.249.143.139:9966/petclinic/api/'
+  REST_API_URL: 'http://3.249.143.139:9966/petclinic/api/'
 };
