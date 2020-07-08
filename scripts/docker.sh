@@ -14,4 +14,4 @@ env DBPASS=${DBPASS}
 #sudo docker-compose up -d #remove and replace with kubernetes commands
 
 
-sudo env DBURL=${DBURL} DBUSER=${DBUSER} DBPASS=${DBPASS} docker stack deploy -c docker-compose.yaml group
+sudo env dburl=${DBURL} dbuser=${DBUSER} dbpass=${DBPASS} docker stack deploy -c docker-compose.yaml group
