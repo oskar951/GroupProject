@@ -106,7 +106,7 @@ Due to being rate limited by bugs stopping the build from working, some tasks we
 
 Our goals for this sprint were to fully implement the additional tasks, to test everything is working and to practice our presentation
 
-Due to the additional tasks and presentation being largely 1finished during sprint 2 (largely due to it taking extra time because of the kubernetes bug), this was fairly easy. We just had to work out who was saying what and who was demonstrating each part of the project
+Due to the additional tasks and presentation being largely finished during sprint 2 (largely due to it taking extra time because of the kubernetes bug), this was fairly easy. We just had to work out who was saying what and who was demonstrating each part of the project
 
 ## Bugs and Fixes
 NGINX bad gateway bug - The error was due to the NGINX file not specifying the IP to activate the proxy from when triggered. This was discovered and solved by learning how NGINX works as a program
