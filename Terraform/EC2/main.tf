@@ -5,6 +5,7 @@ resource "aws_instance" "Webserver" {
   subnet_id              = var.subnet_id
   vpc_security_group_ids = [var.vpc_security_group_ids]
   iam_instance_profile   = var.iam_instance_profile
+  user_data = "${file("../scripts/installjenkins.sh")}"
 
   lifecycle {
     create_before_destroy = true
