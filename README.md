@@ -90,17 +90,20 @@ We then reviewed my risks towards the end of the project to see which control me
 ![Risk Assessment2](https://github.com/oskar951/GroupProject/blob/master/Images/risk%20assesment%202.png)
 
 ## Sprints and Results
-Sprint 1
+### Sprint 1
+
 Our goals for this sprint were to get the app working together and dockerised, and the AWS environment set up
 
 We finished this quite early, but we didn't end the sprint to tasks for later sprints bled in, namely documentation, NGINX, extra features and other MVP tasks that should have been for the next sprint. This meant that when we moved onto the next sprints we had a head start, but also that our work wasn't fully focused on the immediate tasks in this sprint
 
-Sprint 2
+### Sprint 2
+
 Our goals for this sprint were to complete the MVP including all documentation to pass the project and allow us to use the rest of the time to add additional features
 
 Due to being rate limited by bugs stopping the build from working, some tasks were out of reach. In that time we did documentation and additional tasks originally meant for sprint 3. We were forced to change the plan and switch to Docker Swarm due to massive issues with kubernetes preventing us from progressing
 
-Sprint 3
+### Sprint 3
+
 Our goals for this sprint were to fully implement the additional tasks, to test everything is working and to practice our presentation
 
 Due to the additional tasks and presentation being largely 1finished during sprint 2 (largely due to it taking extra time because of the kubernetes bug), this was fairly easy. We just had to work out who was saying what and who was demonstrating each part of the project
