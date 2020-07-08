@@ -1,0 +1,25 @@
+version: '3.7'
+services: 
+  nginx:
+    image: nginx:latest
+    ports: 
+    - target: 80
+      published: 80
+    volumes: 
+    - type: bind
+      source: ./nginx/nginx.conf
+      target: /etc/nginx/nginx.conf
+  backend:
+    # image: hsjhita1/backend:latest
+    build: ./spring-petclinic-rest
+    ports:
+    - target: 9966
+      published: 9966    
+  frontend:
+    # image: hsjhita1/frontend:latest
+    build: ./spring-petclinic-angular
+    ports:
+    - target: 4200
+      published: 4200
+    depends_on:
+    - backend
