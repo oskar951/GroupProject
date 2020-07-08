@@ -18,7 +18,7 @@ services:
     - target: 9966
       published: 9966
     environment:
-    - URL=${DBURL}
+    - DBURL=${DBURL}
     - DBUSER=${DBUSER}
     - DBPASS=${DBPASS}
   frontend:
