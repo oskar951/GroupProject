@@ -37,9 +37,9 @@ We ended up choosing the following tools:
 
 Our original plan was to use Kubernetes as our Application container deployment tool but we had to switch to Docker Swarm due to repeated issues that were taking up all of our time
 
-Our source code is pushed via Git to GitHub. When this is merged into the master branch, a webhook is triggered which activates the Jenkins server. Jenkins then sets up the environment if not already done via Terraform and builds the new docker images before uploading them to dockerhub. A docker swarm is started if not already present and the instances are distributed over the nodes
-
 ![CI pipeline](https://github.com/oskar951/GroupProject/blob/master/Images/ColouredPipeline.jpg)
+
+Our source code is pushed via Git to GitHub. When this is merged into the master branch, a webhook is triggered which activates the Jenkins server. Jenkins then sets up the environment if not already done via Terraform and builds the new docker images before uploading them to dockerhub. A docker swarm is started if not already present and the instances are distributed over the nodes
 
 ![CI pipeline](https://github.com/oskar951/GroupProject/blob/Development/Images/DockerPipeline.jpg)
 
