@@ -101,7 +101,7 @@ resource "aws_cloudwatch_metric_alarm" "ec2_health_alarm" {
 
 resource "aws_cloudwatch_event_rule" "snapshot_rule" {
   name                = "snapshot_schedule"
-  description         = "This event will run every 12 hours"
+  description         = "This event will run every 8 hours"
   schedule_expression = "rate(8 hours)"
   is_enabled          = true
 }
