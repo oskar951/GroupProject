@@ -52,11 +52,12 @@ We have monitoring features to increase uptime. Regular snapshots of the cluster
 
 ### Trello Project Tracking
 
-Using Trello, we tracked the project along the way with a Kanban style board which allowed us to see the progress and things that need to be done. Here is the inital board which shows the tasks that need to be done, some that are already in progress and others that had already been done such as setting up github. Our first sprint has also been outlined:
+Using Trello, we tracked the project along the way with a Kanban style board which allowed us to see the progress and things that need to be done. Here is the inital board which shows the tasks that need to be done, some that are already in progress and others that had already been done such as setting up github. The tasks had been organised according to the MoSCoW principles and the first sprint was also outlined on the board.
 
 ![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/Trello1.jpg)
 
-This is the board throughout the project when some things were in progress and others completed. New tasks had been added now that we fully understood what was required of us and what we wanted to do 
+This is the board at the end of the project. Most, if not all tasks were met, and any issues we had faced along the way was also written down on the board.
+
 ![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/Trello2.jpg)
 
 ## MoSCoW
