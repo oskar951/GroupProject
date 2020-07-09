@@ -56,8 +56,8 @@ Using Trello, we tracked the project along the way with a Kanban style board whi
 
 ![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/Trello1.jpg)
 
-This is the board throughout the project when some things were in progress and others completed. New tasks had been added now that we fully understood what was required of us and what we wanted to do 
-![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/TrelloEND.jpg)
+This is the board at the end the project when tasks were completed. 
+![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/TrelloEnd.jpg)
 
 ## MoSCoW
 
