@@ -25,8 +25,8 @@ pipeline {
             stage('DockerHub'){
                 steps{
                     withDockerRegistry(registry: [credentialsId: 'dockerhub']){
-                        sh sudo docker push hsjhita1/backend:latest
-                        sh sudo docker push hsjhita1/frontend:latest
+                        sh 'sudo docker push hsjhita1/backend:latest'
+                        sh 'sudo docker push hsjhita1/frontend:latest'
                     }
                 }
             }
