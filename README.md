@@ -87,7 +87,7 @@ In our risk assessment we have listed possible risks with the project. We added 
 
 ![Risk Assessment](https://github.com/oskar951/GroupProject/blob/master/Images/risk%20assesment%201.png)
 
-We then reviewed my risks towards the end of the project to see which control measures are implemented and whether we avoided those risks or not.
+We then reviewed our risks towards the end of the project to see which control measures are implemented and whether we avoided those risks or not.
 
 ![Risk Assessment2](https://github.com/oskar951/GroupProject/blob/master/Images/risk%20assesment%202.png)
 
