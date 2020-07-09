@@ -37,11 +37,11 @@ We ended up choosing the following tools:
 
 Our original plan was to use Kubernetes as our Application container deployment tool but we had to switch to Docker Swarm due to repeated issues that were taking up all of our time
 
-![CI pipeline](https://github.com/oskar951/GroupProject/blob/master/Images/ColouredPipeline.jpg)
+![CI pipeline](https://github.com/oskar951/GroupProject/blob/Development/Images/KubernetesPipeline.jpg)
 
 Our source code is pushed via Git to GitHub. When this is merged into the master branch, a webhook is triggered which activates the Jenkins server. Jenkins then sets up the environment if not already done via Terraform and builds the new docker images before uploading them to dockerhub. A docker swarm is started if not already present and the instances are distributed over the nodes
 
-![CI pipeline](https://github.com/oskar951/GroupProject/blob/Development/Images/DockerPipeline.jpg)
+![CI pipeline](https://github.com/oskar951/GroupProject/blob/Development/Images/DockerPipelineV2.jpg)
 
 On the AWS side, we have a VPC with a single security group that contains everything. RDS hosts the MySQL database persistently to allow the EC2 instances to access the data. All of the nodes are all running on T2 micros to save on costs. The website isn't accessible normally from the public internet, but the internet gateway accepts HTTP traffic which is passed to the app through an NGINX reverse proxy
 
