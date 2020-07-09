@@ -122,7 +122,7 @@ Front end not working in kubernetes bug - The front end wasn't accessable throug
 
 Our budget for this project was £20. We ended up spending $9.10/£7.29, coming in well under budget
 
-Our estimated running costs for a month of uptime are ~$93
+Our estimated running costs for a month of uptime are ~$21
 
 It is impossible to calculate the costs for a serverless equivalent without assuming a number of visits per month, but the less views per month the website achieves, the cheaper it will be to access. This also comes at the cost of performance so isn't worth it for a website in many cases
 
