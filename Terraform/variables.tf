@@ -1,0 +1,2 @@
+variable "usr" {}
+variable "pswd" {}
