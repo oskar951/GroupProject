@@ -86,7 +86,7 @@ resource "aws_cloudwatch_metric_alarm" "ec2_health_alarm" {
   comparison_operator = "LessThanThreshold"
   threshold           = "1"
   evaluation_periods  = "1"
-  metric_name         = "HealthyHostCount"
+  metric_name         = "EC2_HEALTH"
   namespace           = "AWS/EC2"
   period              = "60"
   statistic           = "Average"

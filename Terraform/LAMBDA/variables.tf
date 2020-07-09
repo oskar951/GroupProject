@@ -40,12 +40,12 @@ variable "instance_filename" {
 
 variable "instance_function_name" {
   description = "Name of lambda function"
-  default     = "createAMI"
+  default     = "createInstance"
 }
 
 variable "instance_handler" {
   description = "lambda function handler"
-  default     = "createAMI.lambda_handler"
+  default     = "createInstance.lambda_handler"
 }
 
 variable "runtime" {
