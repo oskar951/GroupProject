@@ -1,4 +1,7 @@
 pipeline {
+    environment {
+        registryCredential = 'docker'
+    }
     agent any
     stages{
             stage('Dependencies'){
