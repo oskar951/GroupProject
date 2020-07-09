@@ -27,22 +27,23 @@ resource "aws_cloudwatch_dashboard" "main" {
        },
        {
         "type":"metric",
-        "x":0,
-        "y":20,
-        "width":12,
-        "height":6,
-        "properties":{
-          "metrics":[
-          [ "AWS/EC2", "DiskReadBytes", "InstanceId", "${var.instanceID}",{ "id": "m1" } ],
-          [ ".", ".", ".", "${var.instanceID}", { "id": "m2" } ],
-          [ { "expression": "SUM(METRICS())", "label": "Sum of DiskReadbytes", "id": "e3" } ]
-          ],
-          "view": "timeSeries",
-          "stacked": false,
-          "period":300,
-          "stat":"Average",
-          "region":"eu-west-1",
-          "title":"WebServer Disk Usage"
+          "x":0,
+          "y":0,
+          "width":12,
+          "height":6,
+          "properties":{
+             "metrics":[
+                [
+                   "AWS/EC2",
+                   "EBSReadBytes",
+                   "InstanceId",
+                   "${var.instanceID}"
+                ]
+             ],
+             "period":300,
+             "stat":"Average",
+             "region":"eu-west-1",
+             "title":"WebServer EBS Utilisation"
         }
       }
    ]
