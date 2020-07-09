@@ -39,7 +39,7 @@ Our original plan was to use Kubernetes as our Application container deployment 
 
 ![CI pipeline](https://github.com/oskar951/GroupProject/blob/Development/Images/KubernetesPipeline.jpg)
 
-Our source code is pushed via Git to GitHub. When this is merged into the master branch, a webhook is triggered which activates the Jenkins server. Jenkins then sets up the environment if not already done via Terraform and builds the new docker images before uploading them to dockerhub. A docker swarm is started if not already present and the instances are distributed over the nodes
+Terrafrom is used to build the Jenkins server and application environment. Our source code is pushed via Git to GitHub. When this is merged into the master branch, a webhook is triggered which activates the Jenkins server. Jenkins then builds the new docker images before uploading them to dockerhub. A docker swarm is started if not already present and the instances are distributed over the nodes
 
 ![CI pipeline](https://github.com/oskar951/GroupProject/blob/Development/Images/DockerPipelineV2.jpg)
 
