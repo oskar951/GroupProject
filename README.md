@@ -45,7 +45,7 @@ Terrafrom is used to build the Jenkins server and application environment. Our s
 
 On the AWS side, we have a VPC with a single security group that contains everything. RDS hosts the MySQL database persistently to allow the EC2 instances to access the data. All of the nodes are all running on T2 micros to save on costs. The website isn't accessible normally from the public internet, but the internet gateway accepts HTTP traffic which is passed to the app through an NGINX reverse proxy
 
-![AWS architecture](https://github.com/oskar951/GroupProject/blob/master/Images/aws.png)
+![AWS architecture](https://github.com/oskar951/GroupProject/blob/master/Images/architecture2.png)
 
 We have monitoring features to increase uptime. Regular snapshots of the cluster are taken and stored in an S3 bucket. Cloudwatch monitors the health of each EC2 instance and if there is cause for concern, triggers a lambda function that spins up a replacement EC2 before taking down the unhealthy one. Cloudtrail is used on the IAM roles to track any malicious activity, and the IAM roles are given the minimum permissions required to do their job
 
