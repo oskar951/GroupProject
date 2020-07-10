@@ -129,7 +129,9 @@ To reduce monthly costs, we could opt to not use EKS to manage the kubernetes cl
 
 ## Improvements to Make in the Future
 
-In the future we would have the application in multiple regions to reduce latency on the customer end
+In the future we would have the application in multiple regions to reduce latency on the customer end.
+
+Also we would like to improve testing across the application by testing the database and all the applications components.
 
 ## Acknowledgements
 
