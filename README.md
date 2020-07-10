@@ -45,19 +45,18 @@ Terrafrom is used to build the Jenkins server and application environment. Our s
 
 On the AWS side, we have a VPC with a single security group that contains everything. RDS hosts the MySQL database persistently to allow the EC2 instances to access the data. All of the nodes are all running on T2 micros to save on costs. The website isn't accessible normally from the public internet, but the internet gateway accepts HTTP traffic which is passed to the app through an NGINX reverse proxy
 
-![AWS architecture](https://github.com/oskar951/GroupProject/blob/master/Images/aws.png)
+![AWS architecture](https://github.com/oskar951/GroupProject/blob/master/Images/architecture2.png)
 
 We have monitoring features to increase uptime. Regular snapshots of the cluster are taken and stored in an S3 bucket. Cloudwatch monitors the health of each EC2 instance and if there is cause for concern, triggers a lambda function that spins up a replacement EC2 before taking down the unhealthy one. Cloudtrail is used on the IAM roles to track any malicious activity, and the IAM roles are given the minimum permissions required to do their job
 
 
 ### Trello Project Tracking
 
-Using Trello, we tracked the project along the way with a Kanban style board which allowed us to see the progress and things that need to be done. Here is the inital board which shows the tasks that need to be done, some that are already in progress and others that had already been done such as setting up github. The tasks had been organised according to the MoSCoW principles and the first sprint was also outlined on the board.
+Using Trello, we tracked the project along the way with a Kanban style board which allowed us to see the progress and things that need to be done. Here is the inital board which shows the tasks that need to be done, some that are already in progress and others that had already been done such as setting up github. Our first sprint has also been outlined:
 
 ![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/Trello1.jpg)
 
-This is the board at the end of the project. Most, if not all tasks were met, and any issues we had faced along the way was also written down on the board.
-
+This is the board at the end the project when tasks were completed. 
 ![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/TrelloEnd.jpg)
 
 ## MoSCoW
@@ -120,9 +119,9 @@ Front end not working in kubernetes bug - The front end wasn't accessable throug
 
 ## Costs
 
-Our budget for this project was £20. We ended up spending $9.10/£7.29, coming in well under budget
+Our budget for this project was £20. We ended up spending $1.94/£1.55, coming in well under budget
 
-Our estimated running costs for a month of uptime are ~$21
+Our estimated running costs for a month of uptime are ~$113
 
 It is impossible to calculate the costs for a serverless equivalent without assuming a number of visits per month, but the less views per month the website achieves, the cheaper it will be to access. This also comes at the cost of performance so isn't worth it for a website in many cases
 
@@ -130,7 +129,9 @@ To reduce monthly costs, we could opt to not use EKS to manage the kubernetes cl
 
 ## Improvements to Make in the Future
 
-In the future we would have the application in multiple regions to reduce latency on the customer end
+In the future we would have the application in multiple regions to reduce latency on the customer end.
+
+Also we would like to improve testing across the application by testing the database and all the applications components.
 
 ## Acknowledgements
 
