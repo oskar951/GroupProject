@@ -13,7 +13,11 @@ Week 12 Devops Final Project
 7. [Future Improvements](#Improvements-to-Make-in-the-Future)
 8. [Acknowledgements](#Acknowledgements)
 
+## Setup
 
+If you want to run this app yourself, clone the app down and follow these steps
+
+[![Video](http://img.youtube.com/vi/yX9y5Ysthc0/0.jpg)](http://www.youtube.com/watch?v=yX9y5Ysthc0 "Video Title")
 
 ## Brief
 
