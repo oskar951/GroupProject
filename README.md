@@ -30,18 +30,22 @@ We ended up choosing the following tools:
 * Git - Versions Control System
 * Trello - Project Tracking
 * Terraform - Controlling infrastructure for AWS
-* Kubernetes - Application container deployment
+* Docker Swarm - Application container deployment
 * Docker - Containerisation tool
 * Docker Compose - Containerisation orchestration tool
 * NGINX - Reverse proxy web server
 
-Our source code is pushed via Git to GitHub. When this is merged into the master branch, a webhook is triggered which activates the Jenkins server. Jenkins then sets up the environment if not already done via Terraform and builds the new docker images before uploading them to dockerhub. The Terraform build triggers Amazon EKS that controls the Kubernetes cluster. The new docker images are pulled down to the Kubernetes pods to update the application
+Our original plan was to use Kubernetes as our Application container deployment tool but we had to switch to Docker Swarm due to repeated issues that were taking up all of our time
 
-![CI pipeline](https://github.com/oskar951/SFIA2/blob/master/Images/Pipeline.jpg)
+![CI pipeline](https://github.com/oskar951/GroupProject/blob/Development/Images/KubernetesPipelineV.jpg)
 
-On the AWS side, we have a VPC with a single security group that contains everything. RDS hosts the MySQL database persistently to allow the EKS managed Kubernetes cluster running on EC2 instances to access the data. The kubernetes master node is running of a T3a system because two cores are required, and the worker nodes are all running on T2 micros to save on costs. The website isn't accessible normally from the public internet, but the internet gateway accepts HTTP traffic which is passed to the app through an NGINX reverse proxy
+Terrafrom is used to build the Jenkins server and application environment. Our source code is pushed via Git to GitHub. When this is merged into the master branch, a webhook is triggered which activates the Jenkins server. Jenkins then builds the new docker images before uploading them to dockerhub. A docker swarm is started if not already present and the instances are distributed over the nodes
 
-![AWS architecture](https://github.com/oskar951/GroupProject/blob/master/Images/aws.png)
+![CI pipeline](https://github.com/oskar951/GroupProject/blob/Development/Images/DockerPipelineV1.jpg)
+
+On the AWS side, we have a VPC with a single security group that contains everything. RDS hosts the MySQL database persistently to allow the EC2 instances to access the data. All of the nodes are all running on T2 micros to save on costs. The website isn't accessible normally from the public internet, but the internet gateway accepts HTTP traffic which is passed to the app through an NGINX reverse proxy
+
+![AWS architecture](https://github.com/oskar951/GroupProject/blob/master/Images/architecture2.png)
 
 We have monitoring features to increase uptime. Regular snapshots of the cluster are taken and stored in an S3 bucket. Cloudwatch monitors the health of each EC2 instance and if there is cause for concern, triggers a lambda function that spins up a replacement EC2 before taking down the unhealthy one. Cloudtrail is used on the IAM roles to track any malicious activity, and the IAM roles are given the minimum permissions required to do their job
 
@@ -52,8 +56,8 @@ Using Trello, we tracked the project along the way with a Kanban style board whi
 
 ![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/Trello1.jpg)
 
-This is the board throughout the project when some things were in progress and others completed. New tasks had been added now that we fully understood what was required of us and what we wanted to do 
-![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/trello2.jpg)
+This is the board at the end the project when tasks were completed. 
+![Trello Board](https://github.com/oskar951/GroupProject/blob/master/Images/TrelloEnd.jpg)
 
 ## MoSCoW
 
@@ -83,25 +87,28 @@ In our risk assessment we have listed possible risks with the project. We added 
 
 ![Risk Assessment](https://github.com/oskar951/GroupProject/blob/master/Images/risk%20assesment%201.png)
 
-We then reviewed my risks towards the end of the project to see which control measures are implemented and whether we avoided those risks or not.
+We then reviewed our risks towards the end of the project to see which control measures are implemented and whether we avoided those risks or not.
 
 ![Risk Assessment2](https://github.com/oskar951/GroupProject/blob/master/Images/risk%20assesment%202.png)
 
 ## Sprints and Results
-Sprint 1
+### Sprint 1
+
 Our goals for this sprint were to get the app working together and dockerised, and the AWS environment set up
 
 We finished this quite early, but we didn't end the sprint to tasks for later sprints bled in, namely documentation, NGINX, extra features and other MVP tasks that should have been for the next sprint. This meant that when we moved onto the next sprints we had a head start, but also that our work wasn't fully focused on the immediate tasks in this sprint
 
-Sprint 2
+### Sprint 2
+
 Our goals for this sprint were to complete the MVP including all documentation to pass the project and allow us to use the rest of the time to add additional features
 
-Due to being rate limited by bugs stopping the build from working, some tasks were out of reach. In that time we did documentation and additional tasks originally meant for sprint 3
+Due to being rate limited by bugs stopping the build from working, some tasks were out of reach. In that time we did documentation and additional tasks originally meant for sprint 3. We were forced to change the plan and switch to Docker Swarm due to massive issues with kubernetes preventing us from progressing
 
-Sprint 3
+### Sprint 3
+
 Our goals for this sprint were to fully implement the additional tasks, to test everything is working and to practice our presentation
 
-Due to the additional tasks and presentation being largely 1finished during sprint 2, this was fairly easy. We just had to work out who was saying what and who was demonstrating each part of the project
+Due to the additional tasks and presentation being largely finished during sprint 2 (largely due to it taking extra time because of the kubernetes bug), this was fairly easy. We just had to work out who was saying what and who was demonstrating each part of the project
 
 ## Bugs and Fixes
 NGINX bad gateway bug - The error was due to the NGINX file not specifying the IP to activate the proxy from when triggered. This was discovered and solved by learning how NGINX works as a program
@@ -122,7 +129,9 @@ To reduce monthly costs, we could opt to not use EKS to manage the kubernetes cl
 
 ## Improvements to Make in the Future
 
-In the future we would make the switch to a serverless architecture to reduce costs, and we would have the application in multiple regions to reduce latency on the customer end
+In the future we would have the application in multiple regions to reduce latency on the customer end.
+
+Also we would like to improve testing across the application by testing the database and all the applications components.
 
 ## Acknowledgements
 
