@@ -12,17 +12,17 @@ services:
     - backend
     - frontend
   backend:
-    # image: hsjhita1/backend:latest
+    image: hsjhita1/backend:latest
     build: ./spring-petclinic-rest
     ports:
     - target: 9966
       published: 9966
     environment:
-      - url=${URL}
-      - username=${USERNAME}
-      - password=${PASSWORD}
+    - dburl=${DBURL}
+    - dbuser=${DBUSER}
+    - dbpass=${DBPASS}
   frontend:
-    # image: hsjhita1/frontend:latest
+    image: hsjhita1/frontend:latest
     build: ./spring-petclinic-angular
     ports:
     - target: 4200

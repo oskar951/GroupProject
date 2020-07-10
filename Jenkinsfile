@@ -7,6 +7,12 @@ pipeline {
                     sh './scripts/setup.sh'
                 }
             }
+            stage('Database'){
+                steps{
+                    sh 'chmod +x ./scripts/*'
+                    sh './scripts/database.sh'
+                }
+            }
             stage('Deploy'){
                 steps{
                     sh 'chmod +x ./scripts/*'
